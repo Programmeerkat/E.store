@@ -1,0 +1,26 @@
+div {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 8px;
+  border-radius: 16px;
+}
+
+img {
+  background-color: #dddddd;
+  border-radius: 16px;
+  margin-bottom: 8px;
+}
+
+p.title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+p.price {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #000000
+}

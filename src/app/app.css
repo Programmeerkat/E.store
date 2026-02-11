@@ -4,9 +4,12 @@ h1 {
 }
 
 .products {
-  background-color: pink;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding: 20px;
+}
+
+.products a {
+  text-decoration: none;
 }

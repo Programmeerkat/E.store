@@ -1,0 +1,14 @@
+div.footer {
+	background-color: #6666FF;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	gap: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}

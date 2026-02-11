@@ -1,20 +1,21 @@
 <main>
-  <h1>E-Store</h1>
+  <app-header></app-header>
+  <app-banner></app-banner>
   <div class="products">
     @if (products().length > 0) {
       @for (product of products(); track product.title) {
-        <app-product 
-          [name]="product.title"
-          [price]="product.price"
-          [url]="product.thumbnail"
-        >
-        </app-product>
+        <a [href]="`/product/${product.id}`">
+          <app-card 
+            [name]="product.title"
+            [price]="product.price"
+            [url]="product.thumbnail"
+            >
+          </app-card>
+        </a>
       }
     }
   </div>
-  <footer>
-    <p>Copyright 2026</p>
-  </footer>
+  <app-footer></app-footer>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

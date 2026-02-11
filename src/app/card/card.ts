@@ -1,12 +1,12 @@
 import { Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-card',
   imports: [],
-  templateUrl: './product.html',
-  styleUrl: './product.css',
+  templateUrl: './card.html',
+  styleUrl: './card.css',
 })
-export class Product {
+export class Card {
   name = input<string>();
   price = input.required<number>();
   url = input<string>();
