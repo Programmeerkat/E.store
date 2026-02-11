@@ -1,13 +1,13 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { Card } from './card/card';
-import { Banner } from './banner/banner';
-import { Footer } from './footer/footer';
-import { Header } from './header/header';
+import { Card } from './components/card/card';
+import { Banner } from './components/banner/banner';
+import { Footer } from './components/footer/footer';
+import { Header } from './components/header/header';
 
-import { BannerService } from './banner-service';
-import { ProductService } from './product-service';
+import { BannerService } from './services/banner-service';
+import { ProductService } from './services/product-service';
 
 import { Product } from "./types";
 
