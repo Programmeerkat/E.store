@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Product } from './product/product';
 import { ProductService } from './product-service';
@@ -9,7 +9,13 @@ import { ProductService } from './product-service';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   private productService = inject(ProductService);
-  products = this.productService.getProducts();
+  products = signal<any[]>([]);
+
+  ngOnInit() {
+    this.productService.getProducts().subscribe((data: any) => {
+      this.products.set(data.products);
+    });
+  }
 }
