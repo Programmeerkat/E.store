@@ -1,0 +1,27 @@
+<main>
+  <h1>E-Store</h1>
+  <div class="products">
+   @for (product of products; track product.price) {
+     <app-product 
+      [name]="product.name"
+      [price]="product.price"
+      [url]="product.url"
+    >
+    </app-product>
+   }
+  </div>
+  <footer>
+    <p>Copyright 2026</p>
+  </footer>
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />

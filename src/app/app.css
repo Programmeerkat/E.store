@@ -1,0 +1,12 @@
+h1 {
+  color: red;
+  background-color: yellow;
+}
+
+.products {
+  background-color: pink;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
