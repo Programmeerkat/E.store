@@ -1,7 +1,7 @@
   <div class="products">
     @if (products().length > 0) {
       @for (product of products(); track product.title) {
-        <a routerLink="/product">
+        <a [routerLink]="['/product', product.id]">
           <app-card
             [name]="product.title"
             [price]="product.price"

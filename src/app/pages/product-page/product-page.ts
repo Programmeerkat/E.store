@@ -1,4 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../types';
 import { ProductService } from '../../services/product-service';
 
@@ -11,11 +12,12 @@ import { ProductService } from '../../services/product-service';
 
 export class ProductPage {
   private productService = inject(ProductService);
+  private route = inject(ActivatedRoute);
   product = signal<Product | null>(null);
 
   ngOnInit() { 
-    this.productService.getSingleProduct(1).subscribe((data: any) => {
-      console.log(data)
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.productService.getSingleProduct(id).subscribe((data: any) => {
       this.product.set(data);
     });
   }

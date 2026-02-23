@@ -7,7 +7,11 @@ export const routes: Routes = [
     component: HomePage, 
   },
   {
-    path: 'product',
+    path: 'product/:id',
     component: ProductPage,
   },
+  {
+    path: '**',
+    redirectTo: '',
+  }
 ];
