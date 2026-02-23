@@ -11,4 +11,8 @@ export class ProductService {
   getProducts() {
     return this.http.get<Product[]>('https://dummyjson.com/products');
   }
+
+  getSingleProduct(id: number) {
+    return this.http.get<Product[]>(`https://dummyjson.com/products/${id}`);
+  }
 }

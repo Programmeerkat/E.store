@@ -1,0 +1,14 @@
+  <div class="products">
+    @if (products().length > 0) {
+      @for (product of products(); track product.title) {
+        <a routerLink="/product">
+          <app-card
+            [name]="product.title"
+            [price]="product.price"
+            [url]="product.thumbnail"
+            >
+          </app-card>
+        </a>
+      }
+    }
+  </div>

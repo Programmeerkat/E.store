@@ -1,29 +1,6 @@
 <main>
   <app-header></app-header>
-  <div class="products">
-    @if (products().length > 0) {
-      @for (product of products(); track product.title) {
-        <a [href]="`/product/${product.id}`">
-          <app-card 
-            [name]="product.title"
-            [price]="product.price"
-            [url]="product.thumbnail"
-            >
-          </app-card>
-        </a>
-      }
-    }
-  </div>
+  <router-outlet></router-outlet>
   <app-footer></app-footer>
 </main>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-<router-outlet />
