@@ -1,0 +1,17 @@
+  <h2>Resultaten voor "{{ searchQuery() }}"</h2>
+  <div class="products">
+    @if (products().length > 0) {
+      @for (product of products(); track product.title) {
+        <a [routerLink]="['/product', product.id]">
+          <app-card
+            [name]="product.title"
+            [price]="product.price"
+            [url]="product.thumbnail"
+            >
+          </app-card>
+        </a>
+      }
+    } @else {
+      <p>Geen resultaten gevonden.</p>
+    }
+  </div>

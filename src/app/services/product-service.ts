@@ -20,4 +20,10 @@ export class ProductService {
   getSingleProduct(id: number) {
     return this.http.get<Product>(`${environment.apiUrl}/products/${id}`);
   }
+
+  getProductsSearch(searchquery: string) {
+    return this.http.get<{products: Product[]}>(`${environment.apiUrl}/products/search`, { params: { q: searchquery } }).pipe(
+      map(data => data.products)
+    );
+  }
 }
