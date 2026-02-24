@@ -15,8 +15,8 @@ export class HomePage {
   products = signal<Product[]>([]);
 
   ngOnInit() { 
-    this.productService.getProducts().subscribe((data: any) => {
-      this.products.set(data.products);
+    this.productService.getProducts().subscribe((products) => {
+      this.products.set(products);
     });
   }
 }

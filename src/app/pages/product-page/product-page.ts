@@ -17,8 +17,8 @@ export class ProductPage {
 
   ngOnInit() { 
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productService.getSingleProduct(id).subscribe((data: any) => {
-      this.product.set(data);
+    this.productService.getSingleProduct(id).subscribe((product) => {
+      this.product.set(product);
     });
   }
 }
