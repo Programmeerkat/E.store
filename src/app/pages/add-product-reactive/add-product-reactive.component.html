@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="text" name="name" id="name" formControlName="name" />
+  @if (invalidName) {
+    <h1 class="error">the name should contain product</h1>
+  }
+  <input type="text" name="price" id="price" formControlName="price" />
+  <button type="submit">submit new product</button>
+  <a [routerLink]="[`/`]">go back to home</a>
+
+  @if (invalidForm) {
+    <div class="error">something went wrong try again!</div>
+  }
+</form>
