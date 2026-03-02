@@ -3,18 +3,18 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { Product } from '../types';
 
-import {environment} from './../../environments/environment';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getProducts() {
-    return this.http.get<{products: Product[]}>(`${environment.apiUrl}/products`).pipe(
-      map(data => data.products)
-    );
+    return this.http
+      .get<{ products: Product[] }>(`${environment.apiUrl}/products`)
+      .pipe(map((data) => data.products));
   }
 
   getSingleProduct(id: number) {
@@ -22,8 +22,10 @@ export class ProductService {
   }
 
   getProductsSearch(searchquery: string) {
-    return this.http.get<{products: Product[]}>(`${environment.apiUrl}/products/search`, { params: { q: searchquery } }).pipe(
-      map(data => data.products)
-    );
+    return this.http
+      .get<{
+        products: Product[];
+      }>(`${environment.apiUrl}/products/search`, { params: { q: searchquery } })
+      .pipe(map((data) => data.products));
   }
 }

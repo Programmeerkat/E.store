@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { Footer } from './components/footer/footer';
@@ -8,7 +8,6 @@ import { Header } from './components/header/header';
   selector: 'app-root',
   imports: [RouterOutlet, Footer, Header],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-}
+export class App {}

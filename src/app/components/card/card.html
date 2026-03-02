@@ -1,6 +1,6 @@
 <div>
-  <img [src]="url()">
-  <p class="title">{{ name() ? name() : 'Default name'}}</p>
+  <img alt="url" [src]="url()" />
+  <p class="title">{{ name() ? name() : 'Default name' }}</p>
   <p class="price">€{{ price() }}</p>
   @if (price() < 1 ? true : false) {
     <p>On Sale!</p>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { decrement, increment, reset } from '../../ngrx/actions/counter.action';
@@ -12,11 +12,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './counter.component.css',
 })
 export class CounterComponent {
+  private store = Inject(Store<{ count: number }>);
   count$: Observable<number>;
-  constructor(private store: Store<{ count: number }>) {
+
+  constructor() {
     // TODO: Connect `this.count$` stream to the current store `count` state
     // this.count$ = 1;
-    this.count$ = store.select('count');
+    this.count$ = this.store.select('count');
   }
 
   increment() {

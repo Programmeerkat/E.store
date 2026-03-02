@@ -5,5 +5,5 @@ export const initialProductState = {};
 
 export const productReducer = createReducer(
   initialProductState,
-  on(loadProductsSuccess, (state, { products }) => products),
+  on(loadProductsSuccess, (_, { products }) => products),
 );

@@ -1,7 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../types';
-import { ProductService } from '../../services/product-service';
 import { Card } from '../../components/card/card';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -15,8 +14,8 @@ import { loadProducts } from '../../ngrx/actions/product.action';
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
-export class HomePage {
-  private productService = inject(ProductService);
+export class HomePage implements OnInit {
+  // private productService = inject(ProductService);
   products = signal<Product[]>([]);
   count$: Observable<number>;
   producties$: Observable<any>;
