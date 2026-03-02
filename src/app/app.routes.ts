@@ -4,6 +4,7 @@ import { ProductPage } from './pages/product-page/product-page';
 import { SearchPage } from './pages/search-page/search-page';
 import { AddProductTemplateDrivenComponent } from './pages/add-product-template-driven/add-product-template-driven.component';
 import { AddProductReactiveComponent } from './pages/add-product-reactive/add-product-reactive.component';
+import { CounterComponent } from './pages/counter/counter.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,10 @@ export const routes: Routes = [
   {
     path: 'add-product-reactive',
     component: AddProductReactiveComponent,
+  },
+  {
+    path: 'counter',
+    component: CounterComponent,
   },
   {
     path: '**',

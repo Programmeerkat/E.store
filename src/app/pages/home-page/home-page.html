@@ -1,14 +1,15 @@
-  <div class="products">
-    @if (products().length > 0) {
-      @for (product of products(); track product.title) {
-        <a [routerLink]="['/product', product.id]">
-          <app-card
-            [name]="product.title"
-            [price]="product.price"
-            [url]="product.thumbnail"
-            >
-          </app-card>
-        </a>
-      }
+<div>
+  <h3>Counter: {{ count$ | async }}</h3>
+  <button (click)="decrement()">decrement</button>
+  <!-- {{ producties$ | async | json }} -->
+</div>
+<div class="products">
+  @if ((producties$ | async).length > 0) {
+    @for (product of producties$ | async; track product.title) {
+      <a [routerLink]="['/product', product.id]">
+        <app-card [name]="product.title" [price]="product.price" [url]="product.thumbnail">
+        </app-card>
+      </a>
     }
-  </div>
+  }
+</div>
