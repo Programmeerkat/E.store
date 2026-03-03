@@ -2,8 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 
 import { Header } from './header';
-import { Search } from '../search/search';
-import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 describe('HeaderComponent', () => {

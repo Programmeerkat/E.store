@@ -125,6 +125,7 @@ describe('AddProductReactiveComponent', () => {
   });
 
   it('should log values and reset form if valid', () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
 
     component.form.setValue({
