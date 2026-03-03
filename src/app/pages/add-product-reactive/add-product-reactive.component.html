@@ -1,13 +1,18 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="text" name="name" id="name" formControlName="name" />
-  @if (invalidName) {
-    <h1 class="error">the name should contain product</h1>
-  }
+  <label for="title">Title</label>
+  <input type="text" name="title" id="title" formControlName="title" />
+  <label for="price">Price</label>
   <input type="text" name="price" id="price" formControlName="price" />
-  <button type="submit">submit new product</button>
+  <label for="brand">Brand</label>
+  <input type="text" name="brand" id="brand" formControlName="brand" />
+  <label for="category">Category</label>
+  <input type="text" name="category" id="category" formControlName="category" />
+  <label for="image">Image</label>
+  <input type="text" name="image" id="image" formControlName="image" />
+  <label for="image">Thumbnail</label>
+  <input type="text" name="thumbnail" id="thumbnail" formControlName="thumbnail" />
+  <label for="image">Id</label>
+  <input type="text" name="id" id="id" formControlName="id" />
+  <button type="submit">add new product</button>
   <a [routerLink]="[`/`]">go back to home</a>
-
-  @if (invalidForm) {
-    <div class="error">something went wrong try again!</div>
-  }
 </form>

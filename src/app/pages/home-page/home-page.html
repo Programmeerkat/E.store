@@ -4,12 +4,15 @@
   <!-- {{ producties$ | async | json }} -->
 </div>
 <div class="products">
-  @if ((producties$ | async).length > 0) {
-    @for (product of producties$ | async; track product.title) {
-      <a [routerLink]="['/product', product.id]">
-        <app-card [name]="product.title" [price]="product.price" [url]="product.thumbnail">
-        </app-card>
-      </a>
+  @if (products$ | async) {
+    @for (product of products$ | async; track product.title) {
+      <app-card
+        [name]="product.title"
+        [price]="product.price"
+        [url]="product.thumbnail"
+        [id]="product.id"
+      >
+      </app-card>
     }
   }
 </div>

@@ -7,6 +7,13 @@ div {
   border-radius: 16px;
 }
 
+a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 8px;
+}
 img {
   background-color: #dddddd;
   border-radius: 16px;
@@ -22,5 +29,5 @@ p.title {
 p.price {
   font-size: 20px;
   margin-bottom: 8px;
-  color: #000000
+  color: #000000;
 }

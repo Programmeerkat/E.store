@@ -11,7 +11,7 @@ import { loadProducts } from '../../ngrx/actions/product.action';
 
 @Component({
   selector: 'app-home-page',
-  imports: [Card, RouterLink, CommonModule],
+  imports: [Card, CommonModule],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
@@ -19,22 +19,15 @@ export class HomePage {
   private productService = inject(ProductService);
   products = signal<Product[]>([]);
   count$: Observable<number>;
-  producties$: Observable<any>;
+  products$: Observable<Product[]>;
 
-  constructor(private store: Store<{ count: number; products: any }>) {
+  constructor(private store: Store<{ count: number; products: Product[] }>) {
     this.count$ = store.select('count');
-    this.producties$ = store.select('products');
+    this.products$ = store.select('products');
+    // this.products$.subscribe((data) => console.log(data));
   }
 
   decrement() {
     this.store.dispatch(decrement());
-  }
-  ngOnInit() {
-    // this.productService.getProducts().subscribe((products) => {
-    //   this.products.set(products);
-    //   console.log(products);
-    // });
-
-    this.store.dispatch(loadProducts());
   }
 }
