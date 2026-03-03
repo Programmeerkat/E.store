@@ -1,7 +1,7 @@
 <form #form="ngForm" (ngSubmit)="submitForm(form)">
   <label for="name">Name: </label>
   <input type="text" name="name" id="productName" required minlength="4" ngModel #name="ngModel" />
-  <label for="ability">Price: </label>
+  <label for="price">Price: </label>
   <input type="text" name="price" id="productPrice" required ngModel #price="ngModel" />
   <button type="submit">submit new product</button>
 

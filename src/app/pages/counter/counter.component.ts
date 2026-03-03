@@ -12,10 +12,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './counter.component.css',
 })
 export class CounterComponent {
-  private store = Inject(Store<{ count: number }>);
   count$: Observable<number>;
 
-  constructor() {
+  constructor(private store: Store<{ count: number }>) {
     // TODO: Connect `this.count$` stream to the current store `count` state
     // this.count$ = 1;
     this.count$ = this.store.select('count');
